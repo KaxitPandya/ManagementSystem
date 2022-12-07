@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>All Products</title>
+</head>
+
+<body class="flex justify-center items-center flex-col">
+
+    <h1 class="bg-fuchsia-900 font-mono hover:bg-blue-700"> <%= category %>  Products</h1>
+
+    <ul class="bg-green-800">
+        <% for (let product of Allproduct){ %>
+            <li>
+                <a href="/products/<%= product._id %>">
+                    <%= product.name %>
+                </a>
+            </li>
+            <% } %>
+    </ul>
+    <a href="/products/new/add">Create a New Product</a>
+    <% if(category!=="All"){ %> 
+        <a href="/products">All Products</a> 
+    <% } %> 
+</body>
+
+</html>

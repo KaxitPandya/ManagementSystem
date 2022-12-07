@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> <%=foundedProduct.name%></title>
+</head>
+<body>
+    <h1> <%= foundedProduct.name  %>  </h1>
+
+    <ul>
+        <li>
+            <h4> Price :  <%= foundedProduct.price %>   </h4>
+        </li>
+        <li>
+            <h4> Category : <a href="/products?category=<%=foundedProduct.category%>"> <%= foundedProduct.category %>  </a> </h4>
+        </li>
+    </ul>
+    <!-- <h4> id :  <%= foundedProduct._id %>   </h4> -->
+
+    <a href="/products">All Products</a>
+    <a href="/products/<%=foundedProduct._id%>/edit">Edit Product</a>
+
+    <form action="/products/<%=foundedProduct._id%>?_method=DELETE" method="post">
+    <button>Delete</button>
+    </form>
+
+</body>
+</html>
